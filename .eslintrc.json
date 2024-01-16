@@ -1,0 +1,9 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"@typescript-eslint/explicit-module-boundary-types": ["error"],
+		"@typescript-eslint/explicit-function-return-type": ["error"]
+	}
+}
