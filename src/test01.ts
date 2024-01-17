@@ -1,3 +1,4 @@
+/* global console */
 // Quel est le type de données de la variable "age" ?
 const age = 25; // number to be more specific is 25 type.
 console.log("age:", `${age}: number`);
