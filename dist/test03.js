@@ -1,5 +1,4 @@
 "use strict";
-/* global console */
 // Problème : Triez un tableau d'objets
 // Vous avez un tableau d'objets représentant des personnes, chaque objet ayant les propriétés suivantes : nom (string), âge (number) et score (number). Vous devez trier le tableau dans l'ordre suivant :
 // D'abord, par ordre alphabétique du nom (ascendant).
@@ -7,6 +6,8 @@
 // Enfin, par score décroissant.
 // Vous pouvez utiliser des méthodes de tri JavaScript ou implémenter votre propre algorithme de tri.
 // Voici un exemple de tableau d'objets :
+
+/* global console */
 var Sort;
 (function (Sort) {
 	Sort["AGE"] = "age";
