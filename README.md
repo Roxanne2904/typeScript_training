@@ -36,11 +36,11 @@
 
 #### Expliquez la différence entre 'interface' et 'type' en TypeScript.
 
-# Différence entre `interface` et `type` en TypeScript
+##### Différence entre `interface` et `type` en TypeScript
 
 Les mots-clés `interface` et `type` sont utilisés pour définir des structures de données en TypeScript, mais ils ont des différences subtiles.
 
-##### Interface
+###### Interface
 
 - Utilisée principalement pour définir des contrats ou des formes de données.
 - Peut être étendue ou implémentée, permettant d'ajouter des membres à une interface existante.
@@ -60,7 +60,7 @@ interface Employee extends Person {
 }
 ```
 
-##### Type
+###### Type
 
 - Utilisé pour créer des alias de types, permettant de définir des types complexes ou réutilisables.
 - Peut être générique, acceptant des paramètres de type.
