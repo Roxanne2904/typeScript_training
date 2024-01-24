@@ -6,37 +6,37 @@
 // Enfin, par score décroissant.
 // Vous pouvez utiliser des méthodes de tri JavaScript ou implémenter votre propre algorithme de tri.
 // Voici un exemple de tableau d'objets :
-
-/* global console */
 var Sort;
 (function (Sort) {
-	Sort["AGE"] = "age";
-	Sort["NAME"] = "name";
-	Sort["SCORE"] = "score";
+    Sort["AGE"] = "age";
+    Sort["NAME"] = "name";
+    Sort["SCORE"] = "score";
 })(Sort || (Sort = {}));
 const people = [
-	{ name: "Alice", age: 60, score: 90 },
-	{ name: "Charlie", age: 57, score: 80 },
-	{ name: "Roxanne", age: 25, score: 85 },
-	{ name: "Bob", age: 75, score: 85 },
+    { name: "Alice", age: 60, score: 90 },
+    { name: "Charlie", age: 57, score: 80 },
+    { name: "Roxanne", age: 25, score: 85 },
+    { name: "Bob", age: 75, score: 85 },
 ];
 function sortBy(array, sortBy, { reverse }) {
-	const sortedArray = array.sort((a, b) =>
-		a[sortBy].toString().localeCompare(b[sortBy].toString())
-	);
-	if (reverse) return [...sortedArray].reverse();
-	return [...sortedArray];
+    const sortedArray = array.sort((a, b) => a[sortBy].toString().localeCompare(b[sortBy].toString()));
+    if (reverse)
+        return [...sortedArray].reverse();
+    return [...sortedArray];
 }
 console.log("ici", sortBy(people, Sort.AGE, { reverse: true }));
 function sort(array) {
-	return array.sort((a, b) => {
-		const compareByName = a.name.localeCompare(b.name);
-		const compareByAge = a.age - b.age;
-		const compareByScore = a.score - b.score;
-		if (compareByName !== 0) return compareByName;
-		if (compareByAge !== 0) return compareByAge;
-		if (compareByScore !== 0) return compareByScore;
-		return 0;
-	});
+    return array.sort((a, b) => {
+        const compareByName = a.name.localeCompare(b.name);
+        const compareByAge = a.age - b.age;
+        const compareByScore = a.score - b.score;
+        if (compareByName !== 0)
+            return compareByName;
+        if (compareByAge !== 0)
+            return compareByAge;
+        if (compareByScore !== 0)
+            return compareByScore;
+        return 0;
+    });
 }
 console.log(sort(people));

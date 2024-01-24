@@ -36,41 +36,56 @@
 
 #### Expliquez la différence entre 'interface' et 'type' en TypeScript.
 
-En TypeScript, les interface et les type sont tous deux utilisés pour définir des contrats de types, mais il y a des différences subtiles entre les deux.
+# Différence entre `interface` et `type` en TypeScript
 
-> Interface :
->
-> > Déclaration d'objets : Les interfaces sont principalement utilisées pour décrire la forme d'un objet. Elles peuvent >> déclarer la structure des objets, y compris les propriétés et les méthodes.
+Les mots-clés `interface` et `type` sont utilisés pour définir des structures de données en TypeScript, mais ils ont des différences subtiles.
 
-> > Extension : Vous pouvez étendre une interface en utilisant l'héritage, ce qui vous permet de créer des interfaces >> basées sur d'autres interfaces.
+##### Interface
 
-> > Déclaration fusionnée : Si vous déclarez deux interfaces avec le même nom, elles se fusionneront dans un seul type, >> permettant de diviser la définition de l'interface sur plusieurs fichiers.
+- Utilisée principalement pour définir des contrats ou des formes de données.
+- Peut être étendue ou implémentée, permettant d'ajouter des membres à une interface existante.
+- Peut être utilisée dans des déclarations de fusion pour étendre une interface existante avec de nouvelles propriétés.
+- Sert souvent à déclarer des contrats pour des objets ou des classes.
 
-> > Compatibilité étendue : Les interfaces peuvent être implémentées par des classes, et elles peuvent également être
+**Exemple d'interface :**
 
-> Type :
->
-> > Unions, intersections, alias : Les types permettent de définir des unions, des intersections et des alias de types. Vous pouvez créer des types complexes en combinant différents types.
+```typescript
+interface Person {
+	name: string;
+	age: number;
+}
 
-> > Capacité d'index : Les types peuvent être utilisés pour définir des index et des indexeurs.
+interface Employee extends Person {
+	jobTitle: string;
+}
+```
 
-> > Assignation de type : Les types peuvent être utilisés pour assigner un alias à un type primitif, ce qui facilite la réutilisation dans des endroits multiples.
+##### Type
 
-> > Compatibilité contravariante : Les types sont souvent plus flexibles en termes de compatibilité contravariante, ce qui signifie qu'ils peuvent être plus permissifs lors de l'assignation de types de fonctions.
+- Utilisé pour créer des alias de types, permettant de définir des types complexes ou réutilisables.
+- Peut être générique, acceptant des paramètres de type.
+- Prend en charge l'union, l'intersection et d'autres opérations de manipulation de types.
+- Préféré pour définir des types plus complexes et des unions.
 
-> Recommandations :
->
-> > Choix personnel : Le choix entre interface et type dépend souvent des préférences personnelles et de la situation spécifique.
+**Exemple de type :**
 
-> > Cas d'utilisation : Si vous avez besoin d'une déclaration de forme d'objet ou d'une extension avec héritage, une interface peut être plus appropriée. Si vous avez besoin de créer des types plus complexes, des unions, des intersections ou des alias, vous pouvez opter pour un type.
+```typescript
+type Person = {
+	name: string;
+	age: number;
+};
 
-> En résumé, bien que les interface et les type aient des fonctionnalités similaires, la distinction principale se trouve dans leurs capacités et dans les cas d'utilisation spécifiques où l'une ou l'autre pourrait être plus adaptée. Dans de nombreux cas, ils peuvent être utilisés de manière interchangeable, et le choix entre les deux dépend souvent des préférences de l'équipe de développement et des besoins spécifiques du projet.`
+type Employee = Person & {
+	jobTitle: string;
+};
+```
 
 #### Qu'est-ce que le "duck typing" en TypeScript ?
 
 > Imaginez que vous ayez une fonction qui doit travailler avec des canards. Plutôt que de demander des canards spécifiques, elle demande simplement des objets qui savent "quacker" (faire le bruit d'un canard).
 
 ```
+
 // Déclaration d'un canard
 const realDuck = {
 quack: () => console.log("Quack, quack!")
@@ -89,8 +104,13 @@ const duckLikeObject = {
 quack: () => console.log("Quack, quack!")
 };
 performQuackAction(duckLikeObject); // Fonctionne avec un objet qui ressemble à un canard
+
 ```
 
 > Dans cet exemple, la fonction performQuackAction ne demande pas spécifiquement des canards, elle demande juste des objets qui ont une méthode quack. Peu importe comment cet objet est défini, tant qu'il a une méthode quack, la fonction est contente.
 
 > C'est un peu comme si vous disiez : "Donne-moi quelque chose qui fait 'quack'", et peu importe si c'est un vrai canard ou un objet qui fait 'quack' comme un canard, cela fonctionnera. C'est ce que l'on appelle le "duck typing" : on se préoccupe du comportement plutôt que du type précis.
+
+```
+
+```
